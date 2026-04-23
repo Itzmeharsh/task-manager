@@ -12,10 +12,11 @@ sequelize
   .then(() => {
     console.log("Tables synced ✅");
 
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+    app.listen(process.env.PORT, () => {
+      console.log(`Server running`);
     });
   })
   .catch((err) => {
     console.error("DB Error:", err);
   });
+console.log("DB URL:", process.env.DB_URL);
